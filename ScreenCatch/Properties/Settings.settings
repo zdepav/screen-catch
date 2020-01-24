@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ScreenCatch.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
@@ -11,17 +11,29 @@
     <Setting Name="CursorAreaH" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">32</Value>
     </Setting>
-    <Setting Name="Shurtcut_PrtSc" Type="System.Int32" Scope="User">
+    <Setting Name="Action_PrtSc" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Shurtcut_Alt_PrtSc" Type="System.Int32" Scope="User">
+    <Setting Name="Action_Alt_PrtSc" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="Shurtcut_Shift_PrtSc" Type="System.Int32" Scope="User">
+    <Setting Name="Action_Shift_PrtSc" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
-    <Setting Name="Shurtcut_Alt_Shift_PrtSc" Type="System.Int32" Scope="User">
+    <Setting Name="Action_Alt_Shift_PrtSc" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="OpenEditor_PrtSc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OpenEditor_Alt_PrtSc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OpenEditor_Shift_PrtSc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OpenEditor_Alt_Shift_PrtSc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

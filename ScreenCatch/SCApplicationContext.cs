@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -43,7 +43,7 @@ namespace ScreenCatch {
         private readonly Timer timer;
         private int notificationCount;
         private readonly SettingsEditor settingsEditor;
-        private readonly Action[] actions;
+        private readonly Func<bool>[] actions;
         private string lastPath;
 
         public SCApplicationContext() {
@@ -57,7 +57,7 @@ namespace ScreenCatch {
                 }),
                 Visible = true
             };
-            actions = new Action[] {
+            actions = new Func<bool>[] {
                 CaptureActiveWindow,
                 CaptureActiveScreen,
                 CaptureAll,
@@ -81,26 +81,34 @@ namespace ScreenCatch {
             settingsEditor = new SettingsEditor();
         }
 
-        private void DoNothing() { }
+        private bool DoNothing() => false;
 
         private void HotkeyPressed(int id) {
             try {
                 switch (id) {
                     case 1008:
                         // PrintScreen
-                        actions[Settings.Default.Shurtcut_PrtSc]();
+                        if (actions[Settings.Default.Action_PrtSc]() && Settings.Default.OpenEditor_PrtSc) {
+                            OpenEditor(lastPath);
+                        }
                         break;
                     case 1009:
                         // ALT + PrintScreen
-                        actions[Settings.Default.Shurtcut_Alt_PrtSc]();
+                        if (actions[Settings.Default.Action_Alt_PrtSc]() && Settings.Default.OpenEditor_Alt_PrtSc) {
+                            OpenEditor(lastPath);
+                        }
                         break;
                     case 1010:
                         // SHIFT + PrintScreen
-                        actions[Settings.Default.Shurtcut_Shift_PrtSc]();
+                        if (actions[Settings.Default.Action_Shift_PrtSc]() && Settings.Default.OpenEditor_Shift_PrtSc) {
+                            OpenEditor(lastPath);
+                        }
                         break;
                     case 1011:
                         // ALT + SHIFT + PrintScreen
-                        actions[Settings.Default.Shurtcut_Alt_Shift_PrtSc]();
+                        if (actions[Settings.Default.Action_Alt_Shift_PrtSc]() && Settings.Default.OpenEditor_Alt_Shift_PrtSc) {
+                            OpenEditor(lastPath);
+                        }
                         break;
                 }
             } catch (Exception ex) {
@@ -121,19 +129,20 @@ namespace ScreenCatch {
             return lastPath = $"{path}_[{i}].png";
         }
 
-        private void CaptureActiveWindow() {
+        private bool CaptureActiveWindow() {
             var fwnd = (IntPtr)GetForegroundWindow();
             var wndArea = new RECT();
             GetWindowRect(fwnd, ref wndArea);
-            if (wndArea.IsZero) return;
+            if (wndArea.IsZero) return false;
             var bmpScreenshot = new Bitmap(wndArea.Width, wndArea.Height, PixelFormat.Format24bppRgb);
             var gfxScreenshot = Graphics.FromImage(bmpScreenshot);
             gfxScreenshot.CopyFromScreen(wndArea.Left, wndArea.Top, 0, 0, wndArea.Size, CopyPixelOperation.SourceCopy);
             bmpScreenshot.Save(GetNewSaveFilePath(), ImageFormat.Png);
             Notify(CaptureType.Window);
+            return true;
         }
 
-        private void CaptureActiveScreen() {
+        private bool CaptureActiveScreen() {
             var fwnd = (IntPtr)GetForegroundWindow();
             var screenBounds = Screen.FromHandle(fwnd).Bounds;
             var bmpScreenshot = new Bitmap(screenBounds.Width, screenBounds.Height, PixelFormat.Format32bppArgb);
@@ -142,9 +151,10 @@ namespace ScreenCatch {
                 CopyPixelOperation.SourceCopy);
             bmpScreenshot.Save(GetNewSaveFilePath(), ImageFormat.Png);
             Notify(CaptureType.Screen);
+            return true;
         }
 
-        private void CaptureAll() {
+        private bool CaptureAll() {
             var minX = Screen.AllScreens.Min(s => s.Bounds.Left);
             var maxX = Screen.AllScreens.Max(s => s.Bounds.Right);
             var minY = Screen.AllScreens.Min(s => s.Bounds.Top);
@@ -158,9 +168,10 @@ namespace ScreenCatch {
                 gfxScreenshot.CopyFromScreen(screenBounds.X, screenBounds.Y, screenBounds.X - minX, screenBounds.Y - minY, screenBounds.Size, CopyPixelOperation.SourceCopy);
             bmpScreenshot.Save(GetNewSaveFilePath(), ImageFormat.Png);
             Notify(CaptureType.All);
+            return true;
         }
 
-        private void CaptureAroundCursor() {
+        private bool CaptureAroundCursor() {
             var pos = Cursor.Position;
             var bmpScreenshot = new Bitmap(Settings.Default.CursorAreaW, Settings.Default.CursorAreaH, PixelFormat.Format32bppArgb);
             var gfxScreenshot = Graphics.FromImage(bmpScreenshot);
@@ -169,6 +180,11 @@ namespace ScreenCatch {
             gfxScreenshot.CopyFromScreen(pos.X - wd2, pos.Y - hd2, 0, 0, new Size(Settings.Default.CursorAreaW, Settings.Default.CursorAreaH), CopyPixelOperation.SourceCopy);
             bmpScreenshot.Save(GetNewSaveFilePath(), ImageFormat.Png);
             Notify(CaptureType.Cursor);
+            return true;
+        }
+
+        private void OpenEditor(string file) {
+            Process.Start(new ProcessStartInfo(file) { Verb = "edit" });
         }
 
         /// <summary>Shows notification to the user</summary>

@@ -1,4 +1,4 @@
-﻿namespace ScreenCatch {
+namespace ScreenCatch {
     partial class SettingsEditor {
         /// <summary>
         /// Required designer variable.
@@ -26,11 +26,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsEditor));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cursorSurroundingsWidthNumericUD = new System.Windows.Forms.NumericUpDown();
             this.cursorSurroundingsHeightNumericUD = new System.Windows.Forms.NumericUpDown();
             this.notificationCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.openEditorASPCheckBox = new System.Windows.Forms.CheckBox();
+            this.openEditorSPCheckBox = new System.Windows.Forms.CheckBox();
+            this.openEditorAPCheckBox = new System.Windows.Forms.CheckBox();
+            this.openEditorPCheckBox = new System.Windows.Forms.CheckBox();
             this.shortcutSPComboBox = new System.Windows.Forms.ComboBox();
             this.shortcutASPComboBox = new System.Windows.Forms.ComboBox();
             this.shortcutAPComboBox = new System.Windows.Forms.ComboBox();
@@ -40,47 +43,39 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.cursorSurroundingsWidthNumericUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursorSurroundingsHeightNumericUD)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 27);
+            this.label1.Location = new System.Drawing.Point(7, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 18);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cursor Surroundings Width";
+            this.label1.Text = "Width:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Location = new System.Drawing.Point(254, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 18);
+            this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Cursor Surroundings Height";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 91);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Show Notifications";
+            this.label2.Text = "Height:";
             // 
             // cursorSurroundingsWidthNumericUD
             // 
             this.cursorSurroundingsWidthNumericUD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cursorSurroundingsWidthNumericUD.Location = new System.Drawing.Point(191, 25);
+            this.cursorSurroundingsWidthNumericUD.Location = new System.Drawing.Point(67, 22);
             this.cursorSurroundingsWidthNumericUD.Maximum = new decimal(new int[] {
             512,
             0,
@@ -92,7 +87,7 @@
             0,
             0});
             this.cursorSurroundingsWidthNumericUD.Name = "cursorSurroundingsWidthNumericUD";
-            this.cursorSurroundingsWidthNumericUD.Size = new System.Drawing.Size(236, 26);
+            this.cursorSurroundingsWidthNumericUD.Size = new System.Drawing.Size(180, 26);
             this.cursorSurroundingsWidthNumericUD.TabIndex = 3;
             this.cursorSurroundingsWidthNumericUD.Value = new decimal(new int[] {
             1,
@@ -105,7 +100,7 @@
             // 
             this.cursorSurroundingsHeightNumericUD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cursorSurroundingsHeightNumericUD.Location = new System.Drawing.Point(191, 57);
+            this.cursorSurroundingsHeightNumericUD.Location = new System.Drawing.Point(314, 22);
             this.cursorSurroundingsHeightNumericUD.Maximum = new decimal(new int[] {
             512,
             0,
@@ -117,7 +112,7 @@
             0,
             0});
             this.cursorSurroundingsHeightNumericUD.Name = "cursorSurroundingsHeightNumericUD";
-            this.cursorSurroundingsHeightNumericUD.Size = new System.Drawing.Size(236, 26);
+            this.cursorSurroundingsHeightNumericUD.Size = new System.Drawing.Size(180, 26);
             this.cursorSurroundingsHeightNumericUD.TabIndex = 4;
             this.cursorSurroundingsHeightNumericUD.Value = new decimal(new int[] {
             1,
@@ -129,10 +124,11 @@
             // notificationCheckBox
             // 
             this.notificationCheckBox.AutoSize = true;
-            this.notificationCheckBox.Location = new System.Drawing.Point(191, 94);
+            this.notificationCheckBox.Location = new System.Drawing.Point(6, 25);
             this.notificationCheckBox.Name = "notificationCheckBox";
-            this.notificationCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.notificationCheckBox.Size = new System.Drawing.Size(141, 22);
             this.notificationCheckBox.TabIndex = 5;
+            this.notificationCheckBox.Text = "Show Notifications";
             this.notificationCheckBox.UseVisualStyleBackColor = true;
             this.notificationCheckBox.CheckedChanged += new System.EventHandler(this.notificationCheckBox_CheckedChanged);
             // 
@@ -140,6 +136,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.openEditorASPCheckBox);
+            this.groupBox1.Controls.Add(this.openEditorSPCheckBox);
+            this.groupBox1.Controls.Add(this.openEditorAPCheckBox);
+            this.groupBox1.Controls.Add(this.openEditorPCheckBox);
             this.groupBox1.Controls.Add(this.shortcutSPComboBox);
             this.groupBox1.Controls.Add(this.shortcutASPComboBox);
             this.groupBox1.Controls.Add(this.shortcutAPComboBox);
@@ -150,10 +150,58 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(433, 154);
+            this.groupBox1.Size = new System.Drawing.Size(500, 154);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
+            // 
+            // openEditorASPCheckBox
+            // 
+            this.openEditorASPCheckBox.AutoSize = true;
+            this.openEditorASPCheckBox.Location = new System.Drawing.Point(393, 123);
+            this.openEditorASPCheckBox.Margin = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.openEditorASPCheckBox.Name = "openEditorASPCheckBox";
+            this.openEditorASPCheckBox.Size = new System.Drawing.Size(101, 22);
+            this.openEditorASPCheckBox.TabIndex = 16;
+            this.openEditorASPCheckBox.Text = "Open Editor";
+            this.openEditorASPCheckBox.UseVisualStyleBackColor = true;
+            this.openEditorASPCheckBox.CheckedChanged += new System.EventHandler(this.openEditorASPCheckBox_CheckedChanged);
+            // 
+            // openEditorSPCheckBox
+            // 
+            this.openEditorSPCheckBox.AutoSize = true;
+            this.openEditorSPCheckBox.Location = new System.Drawing.Point(393, 91);
+            this.openEditorSPCheckBox.Margin = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.openEditorSPCheckBox.Name = "openEditorSPCheckBox";
+            this.openEditorSPCheckBox.Size = new System.Drawing.Size(101, 22);
+            this.openEditorSPCheckBox.TabIndex = 15;
+            this.openEditorSPCheckBox.Text = "Open Editor";
+            this.openEditorSPCheckBox.UseVisualStyleBackColor = true;
+            this.openEditorSPCheckBox.CheckedChanged += new System.EventHandler(this.openEditorSPCheckBox_CheckedChanged);
+            // 
+            // openEditorAPCheckBox
+            // 
+            this.openEditorAPCheckBox.AutoSize = true;
+            this.openEditorAPCheckBox.Location = new System.Drawing.Point(393, 59);
+            this.openEditorAPCheckBox.Margin = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.openEditorAPCheckBox.Name = "openEditorAPCheckBox";
+            this.openEditorAPCheckBox.Size = new System.Drawing.Size(101, 22);
+            this.openEditorAPCheckBox.TabIndex = 14;
+            this.openEditorAPCheckBox.Text = "Open Editor";
+            this.openEditorAPCheckBox.UseVisualStyleBackColor = true;
+            this.openEditorAPCheckBox.CheckedChanged += new System.EventHandler(this.openEditorAPCheckBox_CheckedChanged);
+            // 
+            // openEditorPCheckBox
+            // 
+            this.openEditorPCheckBox.AutoSize = true;
+            this.openEditorPCheckBox.Location = new System.Drawing.Point(393, 27);
+            this.openEditorPCheckBox.Margin = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.openEditorPCheckBox.Name = "openEditorPCheckBox";
+            this.openEditorPCheckBox.Size = new System.Drawing.Size(101, 22);
+            this.openEditorPCheckBox.TabIndex = 7;
+            this.openEditorPCheckBox.Text = "Open Editor";
+            this.openEditorPCheckBox.UseVisualStyleBackColor = true;
+            this.openEditorPCheckBox.CheckedChanged += new System.EventHandler(this.openEditorPCheckBox_CheckedChanged);
             // 
             // shortcutSPComboBox
             // 
@@ -162,7 +210,7 @@
             this.shortcutSPComboBox.FormattingEnabled = true;
             this.shortcutSPComboBox.Location = new System.Drawing.Point(172, 89);
             this.shortcutSPComboBox.Name = "shortcutSPComboBox";
-            this.shortcutSPComboBox.Size = new System.Drawing.Size(255, 26);
+            this.shortcutSPComboBox.Size = new System.Drawing.Size(207, 26);
             this.shortcutSPComboBox.TabIndex = 13;
             this.shortcutSPComboBox.SelectedIndexChanged += new System.EventHandler(this.shortcutSPComboBox_SelectedIndexChanged);
             // 
@@ -173,7 +221,7 @@
             this.shortcutASPComboBox.FormattingEnabled = true;
             this.shortcutASPComboBox.Location = new System.Drawing.Point(172, 121);
             this.shortcutASPComboBox.Name = "shortcutASPComboBox";
-            this.shortcutASPComboBox.Size = new System.Drawing.Size(255, 26);
+            this.shortcutASPComboBox.Size = new System.Drawing.Size(207, 26);
             this.shortcutASPComboBox.TabIndex = 12;
             this.shortcutASPComboBox.SelectedIndexChanged += new System.EventHandler(this.shortcutASPComboBox_SelectedIndexChanged);
             // 
@@ -184,7 +232,7 @@
             this.shortcutAPComboBox.FormattingEnabled = true;
             this.shortcutAPComboBox.Location = new System.Drawing.Point(172, 57);
             this.shortcutAPComboBox.Name = "shortcutAPComboBox";
-            this.shortcutAPComboBox.Size = new System.Drawing.Size(255, 26);
+            this.shortcutAPComboBox.Size = new System.Drawing.Size(207, 26);
             this.shortcutAPComboBox.TabIndex = 11;
             this.shortcutAPComboBox.SelectedIndexChanged += new System.EventHandler(this.shortcutAPComboBox_SelectedIndexChanged);
             // 
@@ -195,7 +243,7 @@
             this.shortcutPComboBox.FormattingEnabled = true;
             this.shortcutPComboBox.Location = new System.Drawing.Point(172, 25);
             this.shortcutPComboBox.Name = "shortcutPComboBox";
-            this.shortcutPComboBox.Size = new System.Drawing.Size(255, 26);
+            this.shortcutPComboBox.Size = new System.Drawing.Size(207, 26);
             this.shortcutPComboBox.TabIndex = 10;
             this.shortcutPComboBox.SelectedIndexChanged += new System.EventHandler(this.shortcutPComboBox_SelectedIndexChanged);
             // 
@@ -244,24 +292,34 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.notificationCheckBox);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cursorSurroundingsHeightNumericUD);
-            this.groupBox2.Controls.Add(this.cursorSurroundingsWidthNumericUD);
-            this.groupBox2.Location = new System.Drawing.Point(12, 172);
+            this.groupBox2.Location = new System.Drawing.Point(12, 227);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(433, 120);
+            this.groupBox2.Size = new System.Drawing.Size(500, 54);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Misc";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.cursorSurroundingsHeightNumericUD);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cursorSurroundingsWidthNumericUD);
+            this.groupBox3.Location = new System.Drawing.Point(12, 169);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(500, 55);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cursor Surroundings";
             // 
             // SettingsEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 304);
+            this.ClientSize = new System.Drawing.Size(524, 293);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -278,6 +336,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +346,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown cursorSurroundingsWidthNumericUD;
         private System.Windows.Forms.NumericUpDown cursorSurroundingsHeightNumericUD;
         private System.Windows.Forms.CheckBox notificationCheckBox;
@@ -300,5 +359,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox openEditorPCheckBox;
+        private System.Windows.Forms.CheckBox openEditorASPCheckBox;
+        private System.Windows.Forms.CheckBox openEditorSPCheckBox;
+        private System.Windows.Forms.CheckBox openEditorAPCheckBox;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

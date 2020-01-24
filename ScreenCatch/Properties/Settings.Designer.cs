@@ -12,7 +12,7 @@ namespace ScreenCatch.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -62,48 +62,96 @@ namespace ScreenCatch.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Shurtcut_PrtSc {
+        public int Action_PrtSc {
             get {
-                return ((int)(this["Shurtcut_PrtSc"]));
+                return ((int)(this["Action_PrtSc"]));
             }
             set {
-                this["Shurtcut_PrtSc"] = value;
+                this["Action_PrtSc"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int Shurtcut_Alt_PrtSc {
+        public int Action_Alt_PrtSc {
             get {
-                return ((int)(this["Shurtcut_Alt_PrtSc"]));
+                return ((int)(this["Action_Alt_PrtSc"]));
             }
             set {
-                this["Shurtcut_Alt_PrtSc"] = value;
+                this["Action_Alt_PrtSc"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int Shurtcut_Shift_PrtSc {
+        public int Action_Shift_PrtSc {
             get {
-                return ((int)(this["Shurtcut_Shift_PrtSc"]));
+                return ((int)(this["Action_Shift_PrtSc"]));
             }
             set {
-                this["Shurtcut_Shift_PrtSc"] = value;
+                this["Action_Shift_PrtSc"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public int Shurtcut_Alt_Shift_PrtSc {
+        public int Action_Alt_Shift_PrtSc {
             get {
-                return ((int)(this["Shurtcut_Alt_Shift_PrtSc"]));
+                return ((int)(this["Action_Alt_Shift_PrtSc"]));
             }
             set {
-                this["Shurtcut_Alt_Shift_PrtSc"] = value;
+                this["Action_Alt_Shift_PrtSc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenEditor_PrtSc {
+            get {
+                return ((bool)(this["OpenEditor_PrtSc"]));
+            }
+            set {
+                this["OpenEditor_PrtSc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenEditor_Alt_PrtSc {
+            get {
+                return ((bool)(this["OpenEditor_Alt_PrtSc"]));
+            }
+            set {
+                this["OpenEditor_Alt_PrtSc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenEditor_Shift_PrtSc {
+            get {
+                return ((bool)(this["OpenEditor_Shift_PrtSc"]));
+            }
+            set {
+                this["OpenEditor_Shift_PrtSc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenEditor_Alt_Shift_PrtSc {
+            get {
+                return ((bool)(this["OpenEditor_Alt_Shift_PrtSc"]));
+            }
+            set {
+                this["OpenEditor_Alt_Shift_PrtSc"] = value;
             }
         }
     }

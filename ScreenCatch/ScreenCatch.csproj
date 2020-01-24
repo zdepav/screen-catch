@@ -93,6 +93,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "C:\Cloud\Dropbox\VSProjs\ScreenCatch\ScreenCatch\bin\Release\ScreenCatch.exe" "C:\My Program Files\ScreenCatch.exe" /B /Y</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
